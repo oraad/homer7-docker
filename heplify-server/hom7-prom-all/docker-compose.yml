@@ -152,10 +152,8 @@ services:
     volumes:
       - ./bootstrap:/app/bootstrap
     depends_on:
-      db:
-        condition: service_healthy
-      grafana:
-        condition: service_healthy
+      - db
+      - grafana
 
   db:
     container_name: db
